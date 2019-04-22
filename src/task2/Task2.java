@@ -1,11 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package task2;
-
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Properties;
@@ -13,7 +6,6 @@ import java.util.Scanner;
 
 
 /**
- *
  * @author chris
  */
 
@@ -25,10 +17,7 @@ public class Task2 {
  public static String department = null;
  public static String pay_type = null;
  public static String education_Level = null;
- 
-    /**
-     * @param args the command line arguments
-     */
+
     public static void main(String[] args) {
         
     // connection to the Database
@@ -90,14 +79,7 @@ public static void selectDistinct() throws SQLException
        System.out.println("Wrong number");
       selectDistinct();
     }
-    
-    
-    
-  
-    
-    
-    
-    
+
 }
 
 // Method for specifying the Pay Type    
@@ -144,14 +126,10 @@ public static void selectPayType() throws SQLException
 }
 
 
-
-
-
 // Method for specifying the Education Level
 public static void educationLevel() throws SQLException
 {
-    
-     stm = conn.createStatement();
+    stm = conn.createStatement();
     
     result = stm.executeQuery("Select DISTINCT education_Level\n" +
 "From employee");
@@ -191,10 +169,6 @@ public static void educationLevel() throws SQLException
      
 }
 
-
-
-
-
 // Method for doing the final query and shows the results from the Database.
 public static void finalQuery() throws SQLException
 {
@@ -229,21 +203,16 @@ else{
 }
 
 
-
-
 public static void Menu() throws SQLException
 {
     System.out.println("Choose from these choices");
-        System.out.println("-------------------------\n");
+        System.out.println("-----------------------\n");
         System.out.println("1 - Search Database");
         System.out.println("2 - Quit");
         System.out.println("------> ");
     Scanner scanner = new Scanner(System.in);
     int choice = scanner.nextInt();
-    
-    
-    
-    
+
     switch (choice) {
         case 1:
            selectDistinct();
@@ -254,12 +223,9 @@ public static void Menu() throws SQLException
             System.out.println("Wrong Choice");
             Menu();
     }
-    
+  
     
 }
-
-
-
 
 
 }
